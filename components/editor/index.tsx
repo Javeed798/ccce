@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { Editor, OnMount } from "@monaco-editor/react";
 import monaco from "monaco-editor";
+import Sidebar from "@/components/editor/sidebar";
 
 export default function CodeEditor() {
   const editorRef = useRef<null | monaco.editor.IStandaloneCodeEditor>(null);
@@ -20,6 +21,7 @@ export default function CodeEditor() {
 
   return (
     <>
+      <Sidebar />
       <div className={"h-full w-52"}></div>
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel
@@ -27,7 +29,7 @@ export default function CodeEditor() {
           minSize={30}
           defaultSize={30}
           className={"flex flex-col p-2"}
-        >
+          >
           <div className={"h-10 w-full flex gap-2"}>
             <Button
               variant={"secondary"}
@@ -50,6 +52,16 @@ export default function CodeEditor() {
               defaultLanguage="typescript"
               theme="vs-dark"
               onMount={handelEditorMount}
+              options={{
+                minimap:{
+                  enabled: false
+                },
+                padding:{
+                  bottom:4,
+                  top:4
+                },
+                scrollBeyondLastLine:false
+              }}
             />
           </div>
         </ResizablePanel>

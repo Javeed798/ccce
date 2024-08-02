@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.2.10",
+    "@clerk/themes": "^2.1.15",
     "@monaco-editor/react": "^4.6.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
@@ -20,7 +22,8 @@
     "react-dom": "^18",
     "react-resizable-panels": "^2.0.22",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vscode-icons-js": "^11.6.1"
   },
   "devDependencies": {
     "@types/node": "^20",
